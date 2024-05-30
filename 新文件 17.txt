@@ -1,0 +1,1 @@
+yolo task=detect mode=train model=ultralytics/cfg/models/v10/yolov10s.yaml data=F:\yolov10\datasets\mydata.yaml epochs=1000 batch=1 device=0
