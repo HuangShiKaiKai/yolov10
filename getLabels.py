@@ -2,7 +2,7 @@ import xml.dom.minidom as xmldom
 import os
 
 # voc数据集获取所有标签的所有类别数"
-annotation_path = "F:/subjectData/"  # 需要根据实际路径更改
+annotation_path = "F:\yolov10\datasets\data\Annotations"  # 需要根据实际路径更改
 
 annotation_names = [os.path.join(annotation_path, i) for i in os.listdir(annotation_path)]
 

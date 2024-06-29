@@ -6,8 +6,8 @@ import io
 import numpy as np  # 导入numpy模块并指定别名np
 
 # 1.标签路径
-labelme_path = r"F:\subject"  # 原始json、bmp标注数据路径
-saved_path = r"F:\subjectData"  # 保存路径
+labelme_path = r"F:\yolov10\datasets\data\cutting"  # 原始json、bmp标注数据路径
+saved_path = r"F:\yolov10\datasets\data\Annotations"  # 保存路径
 if not os.path.exists(saved_path):
     os.makedirs(saved_path)
 

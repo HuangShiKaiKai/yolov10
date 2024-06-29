@@ -1,7 +1,7 @@
 import xml.etree.ElementTree as ET
 import os
 
-classes = ['bottle', 'sub', 'symbol', 'cup', 'uparrow', 'vase', 'remote', 'toothbrush', 'cell phone', 'book']  # 类别
+classes = ['r']  # 类别
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def convert(size, box):
@@ -18,9 +18,9 @@ def convert(size, box):
     return (x, y, w, h)
 
 def convert_annotation(image_id):
-    in_file = open('F:\subjectData\%s.xml' % (image_id), encoding='UTF-8')
+    in_file = open('F:/yolov10/datasets/data/Annotations\%s.xml' % (image_id), encoding='UTF-8')
 
-    out_file = open('F:\subjectData/labels\%s.txt' % (image_id), 'w')  # 生成txt格式文件
+    out_file = open('F:/yolov10/datasets/data/labels\%s.txt' % (image_id), 'w')  # 生成txt格式文件
     tree = ET.parse(in_file)
     root = tree.getroot()
     size = root.find('size')
@@ -39,7 +39,7 @@ def convert_annotation(image_id):
         bb = convert((w, h), b)
         out_file.write(str(cls_id) + " " + " ".join([str(a) for a in bb]) + '\n')
 
-xml_path = os.path.join(CURRENT_DIR, 'F:\subjectData')
+xml_path = os.path.join(CURRENT_DIR, 'F:/yolov10/datasets/data/Annotations')
 
 # xml list
 img_xmls = os.listdir(xml_path)
